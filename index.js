@@ -78,7 +78,7 @@ async function getBowerInfo(packageName) {
   let polymer2 = [];
   let polymer1 = [];
   for (let {name, latest} of info) {
-    if (/1\.9 - 2/.test(latest.dependencies.polymer)) {
+    if (/1\.9 - 2/.test(latest.dependencies.polymer) || /\^2\.[0-9]\.[0-9]/.test(latest.dependencies.polymer)) {
       polymer2.push({ name: name, version: latest.version, depCount: getDependentCount(name, info), deps: latest.dependencies||{}, devDeps: latest.devDependencies||{} });
     } else {
       polymer1.push({ name: name, version: latest.version, depCount: getDependentCount(name, info), deps: latest.dependencies||{}, devDeps: latest.devDependencies||{} });
