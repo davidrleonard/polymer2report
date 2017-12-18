@@ -121,7 +121,7 @@ async function getBowerInfo(packageName) {
   let cssPolymer2 = [];
   let cssPolymer1 = [];
   for (let {name, latest} of cssInfo) {
-    if (latest.devDependencies['px-sass-doc'] === '^2.0.0') {
+    if (latest.devDependencies['px-sass-doc'] === '^2.0.0' || name === 'px-demo-design') {
       cssPolymer2.push({ name: name, version: latest.version });
     } else {
       cssPolymer1.push({ name: name, version: latest.version });
